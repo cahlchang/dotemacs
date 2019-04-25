@@ -1,19 +1,19 @@
-(require 'ivy)
-(ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
-(setq enable-recursive-minibuffers t)
-(setq ivy-height 30) ;; minibufferのサイズを拡大！（重要）
-
-;; counsel設定
-(global-set-key (kbd "M-x") 'counsel-M-x)
-;; (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-;; (defvar counsel-find-file-ignore-regexp (regexp-opt '("./" "../")))
-
+;; (require 'ivy)
+;; (ivy-mode 1)
 ;; (setq ivy-use-virtual-buffers t)
 ;; (setq enable-recursive-minibuffers t)
-;; (setq ivy-count-format "(%d/%d) ")
+;; (setq ivy-height 30) ;; minibufferのサイズを拡大！（重要）
 
-(global-set-key "\C-s" 'swiper)
+;; ;; counsel設定
+;; (global-set-key (kbd "M-x") 'counsel-M-x)
+;; ;; (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+;; ;; (defvar counsel-find-file-ignore-regexp (regexp-opt '("./" "../")))
+
+;; ;; (setq ivy-use-virtual-buffers t)
+;; ;; (setq enable-recursive-minibuffers t)
+;; ;; (setq ivy-count-format "(%d/%d) ")
+
+;; (global-set-key "\C-s" 'swiper)
 ;; (global-set-key (kbd "C-c C-r") 'ivy-resume)
 ;; (global-set-key (kbd "<f6>") 'ivy-resume)
 ;; (global-set-key (kbd "M-x") 'counsel-M-x)

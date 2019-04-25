@@ -2,30 +2,31 @@
 ;; (require 'window-or-split)
 ;; (define-key global-map (kbd "C-t") 'other-window-or-split)
 
-(defun split-window-vertically-n (num_wins)
-  (interactive "p")
-  (if (= num_wins 2)
-      (split-window-vertically)
-    (progn
-      (split-window-vertically
-       (- (window-height) (/ (window-height) num_wins)))
-      (split-window-vertically-n (- num_wins 1)))))
-(defun split-window-horizontally-n (num_wins)
-  (interactive "p")
-  (if (= num_wins 2)
-      (split-window-horizontally)
-    (progn
-      (split-window-horizontally
-       (- (window-width) (/ (window-width) num_wins)))
-      (split-window-horizontally-n (- num_wins 1)))))
 
-(defun other-window-or-split ()
-  (interactive)
-  (when (one-window-p)
-    (if (>= (window-body-width) 220)
-        (split-window-horizontally-n 3)
-      (split-window-horizontally)))
-  (other-window 1))
+;; (defun split-window-vertically-n (num_wins)
+;;   (interactive "p")
+;;   (if (= num_wins 2)
+;;       (split-window-vertically)
+;;     (progn
+;;       (split-window-vertically
+;;        (- (window-height) (/ (window-height) num_wins)))
+;;       (split-window-vertically-n (- num_wins 1)))))
+;; (defun split-window-horizontally-n (num_wins)
+;;   (interactive "p")
+;;   (if (= num_wins 2)
+;;       (split-window-horizontally)
+;;     (progn
+;;       (split-window-horizontally
+;;        (- (window-width) (/ (window-width) num_wins)))
+;;       (split-window-horizontally-n (- num_wins 1)))))
+
+;; (defun other-window-or-split ()
+;;   (interactive)
+;;   (when (one-window-p)
+;;     (if (>= (window-body-width) 220)
+;;         (split-window-horizontally-n 3)
+;;       (split-window-horizontally)))
+;;   (other-window 1))
 
 ;; (defun other-window-or-split ()
 ;;   (interactive)
@@ -34,7 +35,8 @@
 ;;   (other-window 1))
 ;; (setq pc-select-selection-keys-only -1)
 
-(global-set-key (kbd "C-t") 'other-window-or-split)
+;;(global-set-key (kbd "C-t") 'other-window-or-split)
+
 
 
 ;; (require 'multi-term)
@@ -98,3 +100,11 @@
 (push '("*Compile-Log*") popwin:special-display-config)
 (push '("*GTAGS SELECT*" t) popwin:special-display-config)
 ;; (push '("*golint*") popwin:special-display-config)
+
+
+;; dired-find-alternate-file の有効化
+;; RET 標準の dired-find-file では dired バッファが複数作られるので
+;; dired-find-alternate-file を代わりに使う
+(put 'dired-find-alternate-file 'disabled nil)
+(define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
+(define-key dired-mode-map (kbd "a") 'dired-find-file)

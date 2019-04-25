@@ -20,3 +20,11 @@
 (require 'session)
 (add-hook 'after-init-hook 'session-initialize)
 (setq session-undo-check -1)
+
+(load-file "~/.emacs.d/site-lisp/emacs-toggl.el")
+
+(require 'emacs-toggl)
+(global-set-key (kbd "C-c t") 'toggl-start-task)
+
+
+(setq tramp-shell-prompt-pattern "^.*[#$%>] *")

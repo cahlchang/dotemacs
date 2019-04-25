@@ -2,8 +2,8 @@
 (require 'go-mode)
 (require 'go-eldoc)
 
-(add-to-list 'load-path "/home/mintuser/.go/src/github.com/golang/lint/misc/emacs")
-(add-to-list 'load-path "/home/mintuser/.go/src/github.com/nsf/gocode/emacs")
+(add-to-list 'load-path "~/.go/src/github.com/golang/lint/misc/emacs")
+(add-to-list 'load-path "~/.go/src/github.com/nsf/gocode/emacs")
 
 (add-hook 'go-mode-hook (lambda ()
 			  (require 'go-autocomplete)

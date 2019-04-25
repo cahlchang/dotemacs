@@ -19,7 +19,11 @@
 (el-get-bundle scratch-log)
 (el-get-bundle popwin)
 (el-get-bundle wgrep-ag)
+
 (el-get-bundle ag)
+;; (el-get-bundle rg)
+
+
 (el-get-bundle browse-kill-ring)
 (el-get-bundle persp-mode)
 (el-get-bundle yasnippet)
@@ -59,28 +63,43 @@
 (el-get-bundle dockerfile-mode)
 
 (el-get-bundle zk-phi/sky-color-clock)
+(el-get-bundle vagrant-tramp)
 
 ;; (el-get-bundle )
 ;
-
-
 
 (package-initialize)
 
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/inits/")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/")
+;; (custom-set-variables
+;;  ;; custom-set-variables was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  '(custom-safe-themes
+;;    (quote
+;;     ("995d0754b79c4940d82bd430d7ebecca701a08631ec46ddcd2c9557059758d33" "be5b03913a1aaa3709d731e1fcfd4f162db6ca512df9196c8d4693538fa50b86" default)))
+;;  ;;'(ivy-mode t)
+;;  '(package-selected-packages
+;;    (quote
+;;     (dired-single cider clojure-mode rust-mode ansible-vault ansible wgrep-ag scratch-log persp-mode mozc all)))
+;;  '(session-use-package t nil (session)))
+;; (custom-set-faces
+;;  ;; custom-set-faces was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  )
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("995d0754b79c4940d82bd430d7ebecca701a08631ec46ddcd2c9557059758d33" "be5b03913a1aaa3709d731e1fcfd4f162db6ca512df9196c8d4693538fa50b86" default)))
- '(ivy-mode t)
  '(package-selected-packages
    (quote
-    (cider clojure-mode rust-mode ansible-vault ansible wgrep-ag scratch-log persp-mode mozc all)))
+    (ssh-config-mode wgrep-ag scratch-log ripgrep rg persp-mode mozc dired-single counsel ansible-vault ansible all)))
  '(session-use-package t nil (session)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
